@@ -1,0 +1,43 @@
+<body class="bg-warning">
+  <img class="col-md-6 offset-md-3" src="https://lh3.googleusercontent.com/proxy/mzyTPaY5ThobWDsVJ__AZceF3GxZ1Wg7OaD02KGwlGXgJo1LwAppPPsrpsT4Q8jW5ytyOlNRCZhHu2XL0BTc6x20VmCZlE-yXg5hAOaYh7CGT1S9Q_hiOasX_JzL8GYdVHlyXF-_0tPpRAngKKJO7yHTJbqxbKRULaUnk9na_PbI1cw" alt="hamburger_img">
+  <h1 class="col-md-6 offset-md-3 text-danger">EAT-DA-BURGER!</h1>
+  <p><span id='display' ></span></p>
+
+<div class = "container">
+    <div class="row center">
+        <div class="col s12 m5">
+            <ul class="left-align">
+                {{#each burgers}}
+                {{#if uneaten}}
+                {{> burgers/burger-block uneaten=false}}
+                {{/if}}
+                {{/each}}
+            </ul>
+
+            <button class="btn btn-outline-primary bg-light text-dark" type="button" id="devour">devour it!</button>
+        </div>
+
+
+        <div class="col s12 m5">
+            <ul class="right-align">
+                 {{#each burgers}}
+                {{#unless eaten}}
+                {{> burgers/burger-block eaten=true}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-6 offset-md-3">
+    <div class="form-group md-3">
+        <input type="text" class="form-control" placeholder="" name="message" aria-label="Burger Name" id="user_input">
+    </div> 
+    <button class="btn btn-outline-primary bg-primary text-light" type="submit" id="addBurger" onclick="showInput();">submit</button><br/>
+</div>
+
+</body>
+
+
